@@ -14,6 +14,7 @@ document.getElementById('contactForm').addEventListener('submit', function(event
     const phone = document.getElementById('phone').value;
     const teamName = document.getElementById('teamName').value;
 
+    //Form Validations
     if (!name.match(/^[a-zA-Z\s]+$/) || !email.match(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/) || !phone.match(/^\d+$/) || !teamName) {
         document.getElementById('formError').innerText = 'Please check your data';
         document.getElementById('formError').classList.remove('d-none');
@@ -32,7 +33,7 @@ document.getElementById('contactForm').addEventListener('submit', function(event
         showThankYouMessage(formData);
     }
 });
-
+//To show the data filled by the user and Thank You message
 function showThankYouMessage(data) {
     const formContainer = document.getElementById('formContainer');
     formContainer.style.display = 'none';
@@ -59,7 +60,7 @@ function showThankYouMessage(data) {
         showDeletionMessage();
     });
 }
-
+//Function to show the message for deleted data
 function showDeletionMessage() {
     const deletionMessage = document.getElementById('deletionMessage');
     deletionMessage.style.display = 'block';
@@ -76,7 +77,7 @@ document.getElementById('teamName').addEventListener('change', function() {
         additionalFields.style.display = 'none';
     }
 });
-
+//To reset the form data
 document.getElementById('resetBtn').addEventListener('click', function() {
     document.getElementById('contactForm').reset();
     document.getElementById('formError').innerText = '';
