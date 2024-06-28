@@ -70,7 +70,6 @@ class Post {
     const postsTableBody = document.getElementById('posts-table-body');
     const rows = postsTableBody.getElementsByTagName('tr');
 
-    // Hide all rows and show only those matching the search value
     Array.from(rows).forEach(row => {
       const nameCell = row.getElementsByTagName('td')[1]; // Assuming name is the second column
       if (nameCell) {
